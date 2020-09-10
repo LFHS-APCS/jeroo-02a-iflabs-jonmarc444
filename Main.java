@@ -11,7 +11,7 @@ public class Main implements Directions {
         Map.getInstance().loadMap("maps/ifLabs.jev");
         new JerooGUI();
         runJerooCode();
-
+ 
     }
 
     /**
