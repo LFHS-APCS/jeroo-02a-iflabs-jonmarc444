@@ -9,14 +9,14 @@ public class Jeroo extends JerooBase {
      * when called, the Jeroo will finish facing east
      */
     public void faceEast() {
-      if (isFacing(NORTH)){
+      if(isFacing(NORTH)){
         turn(RIGHT);
       } 
-      if (isFacing(WEST)){
+      if(isFacing(WEST)){
         turn(LEFT);
         turn(LEFT);
       }
-      if (isFacing(SOUTH)){
+      if(isFacing(SOUTH)){
         turn(LEFT);
       }
       
