@@ -9,14 +9,14 @@ public class Jeroo extends JerooBase {
      * when called, the Jeroo will finish facing east
      */
     public void faceEast() {
-      if(isFacing(NORTH)){
+      if (isFacing(NORTH)) {
         turn(RIGHT);
       } 
-      if(isFacing(WEST)){
+      if (isFacing(WEST)) {
         turn(LEFT);
         turn(LEFT);
       }
-      if(isFacing(SOUTH)){
+      if (isFacing(SOUTH)) {
         turn(LEFT);
       }
       
@@ -29,12 +29,13 @@ public class Jeroo extends JerooBase {
      *             facing its original direction when it finishes.
      */
     public boolean isLeftBlocked(){
-      if (isWater(LEFT));{
+      if (isWater(LEFT)) {
         return true;
       } else {
         turn(LEFT);
-        hop();}
-      if (isWater(AHEAD));{
+        hop();
+        }
+      if (isWater(AHEAD)) {
         return true;
       } else {
         return false;
@@ -48,9 +49,32 @@ public class Jeroo extends JerooBase {
      * In all cases, it should pick up the flowers.
      * IMPORTANT:  Other than its direction, the Jeroo should finish in its original spot.
      */
-    public void findNextDirection()
-    {
-
+    public void findNextDirection() {
+      if (!isFlower(AHEAD)) {
+        turn(LEFT);
+      } else {
+        hop();
+        pick();
+        }
+      if (isFlower(AHEAD)) {
+        hop();
+        pick();
+      } else {
+        turn(LEFT);
+        turn(LEFT);
+        hop();
+        turn(RIGHT);
+        }
+      if (isFlower(AHEAD)) {
+        hop();
+        pick();
+        turn(LEFT);
+        turn(LEFT);
+        hop();
+        hop();
+        turn(LEFT);
+        }
+      
     }
 
     /**
